@@ -1,0 +1,60 @@
+﻿@page
+@model LibraryProject.Pages.BookRents.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>BookRent</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BookRent.Id" />
+            <div class="form-group">
+                <label asp-for="BookRent.BookId" class="control-label"></label>
+                <input asp-for="BookRent.BookId" class="form-control" />
+                <span asp-validation-for="BookRent.BookId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookRent.StudentId" class="control-label"></label>
+                <input asp-for="BookRent.StudentId" class="form-control" />
+                <span asp-validation-for="BookRent.StudentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookRent.RentDate" class="control-label"></label>
+                <input asp-for="BookRent.RentDate" class="form-control" />
+                <span asp-validation-for="BookRent.RentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookRent.SysDate" class="control-label"></label>
+                <input asp-for="BookRent.SysDate" class="form-control" />
+                <span asp-validation-for="BookRent.SysDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookRent.ReturnDate" class="control-label"></label>
+                <input asp-for="BookRent.ReturnDate" class="form-control" />
+                <span asp-validation-for="BookRent.ReturnDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookRent.Qty" class="control-label"></label>
+                <input asp-for="BookRent.Qty" class="form-control" />
+                <span asp-validation-for="BookRent.Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

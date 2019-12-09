@@ -1,0 +1,27 @@
+﻿@page
+@model LibraryProject.Pages.BookRentHistory.BookRentHistoryModel
+@{
+    ViewData["Title"] = "BookRentHistory";
+}
+
+<h1>BookRentHistory</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.student.Name)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.StudentList)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
